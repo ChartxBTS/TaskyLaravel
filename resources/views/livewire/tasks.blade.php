@@ -11,9 +11,9 @@
             <div>
                 <input type="search" placeholder="Buscar" class="shadow appearance-none border rounded-sm">
             </div>
-            <div class="mr-2">
+            <!-- <div class="mr-2">
                 <input wire:model.debounce.500ms="q" type="checkbox" class="mr-2 leading-tight" wire:model="active"/>Activar Solo?
-            </div>
+            </div> -->
         </div>
         <table class="table-auto w-full">
             <thead>
@@ -27,7 +27,7 @@
                     </th>
                     <th class="px-4 py-2">
                         <div class="flex items-center">
-                            <button wire:click="sortBy('tittle')">Titulo</button>
+                            <button wire:click="sortBy('title')">Titulo</button>
                             <x-sort-icon sortField="title" :sort-by="$sortBy" :sort-asc="$sortAsc" />
 
                         </div>

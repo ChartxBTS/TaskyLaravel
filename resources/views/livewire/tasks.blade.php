@@ -59,17 +59,17 @@
             <tbody>
             @if ($tasks)
                 @foreach($tasks as $task)
-                <tr>
+                <tr>z
                     <td class="border px-4 py-2">{{ $task->id}}</td>
                     <td class="border px-4 py-2">{{ $task->title}}</td>
                     <td class="border px-4 py-2">{{ $task->description}}</td>
                     <td class="border px-4 py-2">{{ $task->category}}</td>
-                    
-                        <td class="border px-4 py-2">{{ $task->completed ? 'Yes' : 'No' }}</td>
-                    
+                        <td class="border px-4 py-2">{{ $task->completed ? '0' : '1' }}</td>
                     <td class="border px-4 py-2">
                     
-                        Edit 
+                        <x-button wire:click="confirmTaskEdit( {{ $task->id }})" class="bg-orange-500 hover:bg-orange-700">
+                            Editar
+                        </x-button>
 
                         <x-danger-button wire:click="confirmTaskDeletion( {{ $task->id }})" wire:loading.attr="disabled">
                             Delete
@@ -116,7 +116,7 @@
         <!-- Modal para agregar tarea -->
 <x-dialog-modal wire:model="confirmingTaskAdd">
     <x-slot name="title">
-        {{ __('Agregar Tarea') }}
+        {{ isset( $this->task->id) ? 'Editar Tarea' : 'Agregar Tarea' }}
     </x-slot>
 
     <x-slot name="content">

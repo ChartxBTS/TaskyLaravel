@@ -85,10 +85,15 @@ class Tasks extends Component
     }
 
     public function confirmTaskAdd()
-{
-    $this->confirmingTaskAdd = true;
-}
+    {
+        $this->confirmingTaskAdd = true;
+    }
 
+    public function confirmTaskEdit(Task $task)
+    {
+        $this ->task = $task;
+        $this->confirmingTaskAdd = true;
+    }
 
     public function saveTask()
     {

@@ -137,8 +137,13 @@
             </div>
 
             <div class="col-span-6 sm:col-span-4">
-                <x-label for="category" value="{{ __('Categoria') }}" />
-                <x-input id="category" type="text" class="mt-1 block w-full" wire:model.defer="task.category" required />
+                <x-label for="category" value="{{ __('Categoría') }}" />
+                <select id="category" name="category" class="mt-1 block w-full" wire:model.defer="task.category" required>
+                    <option value="">Selecciona una categoría</option>
+                    <option value="Higiene">Higiene</option>
+                    <option value="Salud">Salud</option>
+                    <option value="Estilo de vida">Estilo de vida</option>
+                </select>
                 <x-input-error for="task.category" class="mt-2" />
             </div>
 
